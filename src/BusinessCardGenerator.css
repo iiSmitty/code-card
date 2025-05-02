@@ -567,3 +567,48 @@ body {
 .code-punctuation.punc-comma {
     color: var(--syntax-punctuation-special);
 }
+
+/*
+ * Application Footer Styles
+ * Main container for the application footer section
+ */
+.app-footer {
+    width: 100%;               /* Full width container */
+    padding: 1.5rem 1rem;      /* Vertical and horizontal padding */
+    margin-top: 1.5rem;        /* Spacing from preceding content */
+    text-align: center;        /* Center-aligned text content */
+    font-size: 0.875rem;       /* Equivalent to text-sm (14px) */
+    color: var(--text-secondary); /* Secondary text color from theme */
+}
+
+/*
+ * Footer link styling
+ * Applies to all anchor elements within the footer
+ */
+.app-footer a {
+    color: var(--accent-primary); /* Primary accent color from theme */
+    font-weight: 500;             /* Medium font weight */
+    text-decoration: none;        /* Removes default underline */
+    transition: color 0.2s ease;  /* Smooth transition for hover state */
+}
+
+/*
+ * Footer link hover state
+ * Visual feedback when user hovers over links
+ */
+.app-footer a:hover {
+    color: var(--text-primary);   /* Changes to primary text color on hover */
+    text-decoration: underline;   /* Adds underline on hover */
+}
+
+/*
+ * Responsive adjustments for mobile devices
+ * Applied when viewport width is 767px or less
+ */
+@media (max-width: 767px) {
+    .app-footer {
+        margin-top: 1rem;         /* Reduced top margin on mobile */
+        padding: 1rem;            /* Reduced padding on mobile */
+        font-size: 0.8rem;        /* Slightly smaller text on mobile (12.8px) */
+    }
+}

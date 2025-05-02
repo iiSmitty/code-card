@@ -127,6 +127,7 @@ export default function BusinessCardGenerator() {
 
     return (
         <div className="app-container">
+            {/* --- Form Container --- */}
             <div className="form-container">
                 <h2 className="form-title">Business Card Details</h2>
 
@@ -244,11 +245,12 @@ export default function BusinessCardGenerator() {
                 )}
             </div>
 
-            {/* Card Preview */}
+            {/* --- Card Preview Container --- */}
             <div className="preview-container">
                 <h2 className="preview-title">Live Preview</h2>
                 <div className="preview-scroll-wrapper">
                     <div id="card-preview" className="card-preview">
+                        {/* Window Title Bar */}
                         <div className="window-title">
                             <div className="window-controls">
                                 <span className="window-button close"></span>
@@ -257,6 +259,7 @@ export default function BusinessCardGenerator() {
                             </div>
                             <span className="window-name">BusinessCard.json</span>
                         </div>
+                        {/* Menu Bar */}
                         <div className="menu-bar">
                             <span className="menu-item active">File</span>
                             <span className="menu-item">Edit</span>
@@ -264,6 +267,7 @@ export default function BusinessCardGenerator() {
                             <span className="menu-item">Run</span>
                             <span className="menu-item">Help</span>
                         </div>
+                        {/* Code Editor */}
                         <div className="code-editor">
                             <div className="line-numbers">
                                 {[...Array(6)].map((_, i) => (
@@ -271,25 +275,39 @@ export default function BusinessCardGenerator() {
                                 ))}
                             </div>
                             <pre className="code-content"><code>
-                            <div className="code-line"><span className="code-punctuation punc-brace">{`{`}</span></div>
-                            <div className="code-line">
-                                <span className="code-indent">  </span><span className="code-key">"name"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.name}"</span><span className="code-punctuation punc-comma">,</span>
-                            </div>
-                            <div className="code-line">
-                                <span className="code-indent">  </span><span className="code-key">"title"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.title}"</span><span className="code-punctuation punc-comma">,</span>
-                            </div>
-                            <div className="code-line">
-                                <span className="code-indent">  </span><span className="code-key">"email"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.email}"</span><span className="code-punctuation punc-comma">,</span>
-                            </div>
-                            <div className="code-line">
-                                <span className="code-indent">  </span><span className="code-key">"link"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.link}"</span>
-                            </div>
-                            <div className="code-line"><span className="code-punctuation punc-brace">{`}`}</span></div>
-                        </code></pre>
+                                <div className="code-line"><span className="code-punctuation punc-brace">{`{`}</span></div>
+                                <div className="code-line">
+                                    <span className="code-indent">  </span><span className="code-key">"name"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.name}"</span><span className="code-punctuation punc-comma">,</span>
+                                </div>
+                                <div className="code-line">
+                                    <span className="code-indent">  </span><span className="code-key">"title"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.title}"</span><span className="code-punctuation punc-comma">,</span>
+                                </div>
+                                <div className="code-line">
+                                    <span className="code-indent">  </span><span className="code-key">"email"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.email}"</span><span className="code-punctuation punc-comma">,</span>
+                                </div>
+                                <div className="code-line">
+                                    <span className="code-indent">  </span><span className="code-key">"link"</span><span className="code-punctuation punc-colon">:</span> <span className="code-value string">"{formData.link}"</span>
+                                </div>
+                                <div className="code-line"><span className="code-punctuation punc-brace">{`}`}</span></div>
+                            </code></pre>
                         </div>
                     </div>
                 </div>
+
+                {/* --- Footer (inside preview-container) --- */}
+                <footer className="app-footer">
+                    <span>Built by </span>
+                    <a
+                        href="https://andresmit.co.za/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        andresmit.co.za
+                    </a>
+                </footer>
+
             </div>
+
         </div>
     );
 }
