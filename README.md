@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Code Card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Generate unique, code-themed digital business cards instantly! Code Card provides a live preview mimicking a code editor, letting you create and share your contact information with a distinct developer flair.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+Check out the live version here: **[card.andresmit.co.za](https://card.andresmit.co.za)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎨 Key Features
 
-### `npm test`
+*   **Live Preview:** See your business card update in real-time as you type, displayed in a stylish code editor format.
+*   **Data Persistence via URL:** Share your generated card easily – all data is encoded directly into the URL hash.
+*   **QR Code Generation:** Instantly create a QR code linking to your shareable card URL for quick scanning.
+*   **PNG Download:** Download your code-themed business card as a PNG image using `html2canvas`.
+*   **Dark Mode:** Built with a sleek, Dracula-inspired dark theme.
+*   **Responsive Design:** Works smoothly on desktop and mobile devices.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 💻 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*   **Frontend:** React.js
+*   **Styling:** CSS (with CSS Variables for theming)
+*   **PNG Generation:** `html2canvas`
+*   **QR Code Generation:** `qrcode.react`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Getting Started
 
-### `npm run eject`
+To run this project locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+    cd YOUR_REPO_NAME
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    *(Or `yarn install` if you use Yarn)*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3.  **Run the development server:**
+    ```bash
+    npm start
+    ```
+    *(Or `yarn start`)*
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4.  Open [http://localhost:3000](http://localhost:3000) (or the port specified) in your browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## ⚙️ How to Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1.  Open the app.
+2.  Fill in your details (Name, Title, Email, Website/Link) in the form on the left.
+3.  Watch the "Live Preview" on the right update instantly, showing your card as a JSON-like structure in a code editor theme.
+4.  Use the buttons:
+    *   **Download as PNG:** Saves the preview area as an image file.
+    *   **Copy Shareable Link:** Copies the current URL (with your encoded data) to your clipboard.
+    *   **Show/Hide QR Code:** Generates a QR code for the shareable link.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 💡 Future Ideas (Potential Enhancements)
 
-### Making a Progressive Web App
+*   [ ] Different code editor themes (Monokai, Solarized, etc.)
+*   [ ] Multiple card templates/layouts (beyond JSON view)
+*   [ ] More field options (Phone, Social Links)
+*   [ ] Option to save/load card data locally or via a simple backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
