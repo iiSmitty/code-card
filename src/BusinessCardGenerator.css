@@ -612,3 +612,59 @@ body {
         font-size: 0.8rem;        /* Slightly smaller text on mobile (12.8px) */
     }
 }
+
+/* PNG Capture Styles */
+.card-preview.capturing {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    position: fixed;
+    left: -99999px;
+    top: 0;
+    z-index: -1;
+}
+
+/* Window elements for capture */
+.card-preview.capturing .window-title {
+    padding: 12px 18px !important;
+}
+
+.card-preview.capturing .window-button {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 10px !important;
+}
+
+.card-preview.capturing .window-name {
+    font-size: 18px !important;
+}
+
+/* Menu elements for capture */
+.card-preview.capturing .menu-bar {
+    padding: 10px 18px !important;
+    font-size: 16px !important;
+}
+
+.card-preview.capturing .menu-item {
+    margin: 0 8px !important;
+    padding: 5px 12px !important;
+}
+
+/* Code editor for capture */
+.card-preview.capturing .code-editor {
+    padding: 25px 20px 20px 20px !important;
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.card-preview.capturing .line-numbers {
+    padding-right: 25px !important;
+    font-size: 18px !important;
+}
+
+.card-preview.capturing .code-content code,
+.card-preview.capturing .code-content .code-line {
+    white-space: pre !important;
+}

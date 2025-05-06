@@ -59,14 +59,45 @@ export default function BusinessCardGenerator() {
 
     // Generate and download card as PNG
     const downloadAsPNG = () => {
-        const cardElement = document.getElementById('card-preview');
-        cardElement.classList.add('capturing');
+        const originalCardElement = document.getElementById('card-preview');
+        if (!originalCardElement) {
+            console.error("Card preview element not found!");
+            setCopyStatus('Error: Preview element missing.');
+            setTimeout(() => setCopyStatus(''), 3000);
+            return;
+        }
+
+        const targetOutputWidthPx = 500;
+        const cardClone = originalCardElement.cloneNode(true);
+        cardClone.id = 'card-preview-clone';
+        cardClone.classList.add('capturing');
+
+        cardClone.style.position = 'fixed';
+        cardClone.style.left = '-99999px';
+        cardClone.style.top = '0px';
+        cardClone.style.width = `${targetOutputWidthPx}px`;
+        cardClone.style.height = 'auto';
+        cardClone.style.zIndex = '-1';
+
+        document.body.appendChild(cardClone);
+
+        const dynamicOutputHeightPx = Math.ceil(cardClone.getBoundingClientRect().height);
+        cardClone.style.height = `${dynamicOutputHeightPx}px`;
 
         import('html2canvas').then(({ default: html2canvas }) => {
-            html2canvas(cardElement, {
-                backgroundColor: '#282a36',
+            html2canvas(cardClone, {
+                backgroundColor: null,
                 useCORS: true,
-                logging: false
+                logging: false,
+                width: targetOutputWidthPx,
+                height: dynamicOutputHeightPx,
+                scale: 1,
+                windowWidth: targetOutputWidthPx,
+                windowHeight: dynamicOutputHeightPx,
+                x: 0,
+                y: 0,
+                scrollX: 0,
+                scrollY: 0
             }).then(canvas => {
                 const link = document.createElement('a');
                 link.download = formData.name ?
@@ -74,13 +105,12 @@ export default function BusinessCardGenerator() {
                     'business_card.png';
                 link.href = canvas.toDataURL('image/png');
                 link.click();
-                cardElement.classList.remove('capturing');
-
             }).catch(err => {
                 console.error("html2canvas error:", err);
-                cardElement.classList.remove('capturing');
                 setCopyStatus('Error generating PNG.');
                 setTimeout(() => setCopyStatus(''), 3000);
+            }).finally(() => {
+                document.body.removeChild(cardClone);
             });
         }).catch(err => {
             console.error("Failed to load html2canvas:", err);
